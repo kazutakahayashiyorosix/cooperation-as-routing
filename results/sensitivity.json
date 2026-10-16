@@ -1,0 +1,191 @@
+{
+ "kappa=5.0,c=0.1,none": {
+  "resolution": 0.05066666666666667,
+  "deliveries_per_request": 1.8293333333333337,
+  "deliveries_per_resolution": 37.01711229946524,
+  "median_hops": 2.8,
+  "mean_load": 0.6097777777777778
+ },
+ "kappa=5.0,c=0.1,delivery": {
+  "resolution": 0.09066666666666667,
+  "deliveries_per_request": 71.80266666666667,
+  "deliveries_per_resolution": 808.4438225887058,
+  "median_hops": 5.5,
+  "mean_load": 21.133333333333333
+ },
+ "kappa=5.0,c=0.1,effective": {
+  "resolution": 0.2786666666666667,
+  "deliveries_per_request": 21.880666666666666,
+  "deliveries_per_resolution": 79.64442274471337,
+  "median_hops": 4.7,
+  "mean_load": 5.715333333333334
+ },
+ "kappa=5.0,c=0.3,none": {
+  "resolution": 0.05066666666666667,
+  "deliveries_per_request": 1.8293333333333337,
+  "deliveries_per_resolution": 37.01711229946524,
+  "median_hops": 2.8,
+  "mean_load": 0.6097777777777778
+ },
+ "kappa=5.0,c=0.3,delivery": {
+  "resolution": 0.09066666666666667,
+  "deliveries_per_request": 71.80266666666667,
+  "deliveries_per_resolution": 808.4438225887058,
+  "median_hops": 5.5,
+  "mean_load": 21.133333333333333
+ },
+ "kappa=5.0,c=0.3,effective": {
+  "resolution": 0.2166666666666667,
+  "deliveries_per_request": 4.314666666666667,
+  "deliveries_per_resolution": 19.970145606353732,
+  "median_hops": 4.0,
+  "mean_load": 1.1271111111111112
+ },
+ "kappa=5.0,c=0.5,none": {
+  "resolution": 0.05066666666666667,
+  "deliveries_per_request": 1.8293333333333337,
+  "deliveries_per_resolution": 37.01711229946524,
+  "median_hops": 2.8,
+  "mean_load": 0.6097777777777778
+ },
+ "kappa=5.0,c=0.5,delivery": {
+  "resolution": 0.09066666666666667,
+  "deliveries_per_request": 71.80266666666667,
+  "deliveries_per_resolution": 808.4438225887058,
+  "median_hops": 5.5,
+  "mean_load": 21.133333333333333
+ },
+ "kappa=5.0,c=0.5,effective": {
+  "resolution": 0.15733333333333335,
+  "deliveries_per_request": 2.6399999999999997,
+  "deliveries_per_resolution": 16.887731274403833,
+  "median_hops": 3.6,
+  "mean_load": 0.7699999999999999
+ },
+ "kappa=20.0,c=0.1,none": {
+  "resolution": 0.10800000000000001,
+  "deliveries_per_request": 2.1606666666666663,
+  "deliveries_per_resolution": 20.139187339832507,
+  "median_hops": 3.2,
+  "mean_load": 0.7202222222222222
+ },
+ "kappa=20.0,c=0.1,delivery": {
+  "resolution": 0.29333333333333333,
+  "deliveries_per_request": 192.21466666666666,
+  "deliveries_per_resolution": 669.1443469236729,
+  "median_hops": 5.6,
+  "mean_load": 53.15844444444444
+ },
+ "kappa=20.0,c=0.1,effective": {
+  "resolution": 0.638,
+  "deliveries_per_request": 42.440000000000005,
+  "deliveries_per_resolution": 66.49622952207639,
+  "median_hops": 4.9,
+  "mean_load": 9.228666666666667
+ },
+ "kappa=20.0,c=0.3,none": {
+  "resolution": 0.10800000000000001,
+  "deliveries_per_request": 2.1606666666666663,
+  "deliveries_per_resolution": 20.139187339832507,
+  "median_hops": 3.2,
+  "mean_load": 0.7202222222222222
+ },
+ "kappa=20.0,c=0.3,delivery": {
+  "resolution": 0.29333333333333333,
+  "deliveries_per_request": 192.21466666666666,
+  "deliveries_per_resolution": 669.1443469236729,
+  "median_hops": 5.6,
+  "mean_load": 53.15844444444444
+ },
+ "kappa=20.0,c=0.3,effective": {
+  "resolution": 0.39466666666666667,
+  "deliveries_per_request": 6.472666666666666,
+  "deliveries_per_resolution": 16.403373628105648,
+  "median_hops": 4.0,
+  "mean_load": 1.5097777777777779
+ },
+ "kappa=20.0,c=0.5,none": {
+  "resolution": 0.10800000000000001,
+  "deliveries_per_request": 2.1606666666666663,
+  "deliveries_per_resolution": 20.139187339832507,
+  "median_hops": 3.2,
+  "mean_load": 0.7202222222222222
+ },
+ "kappa=20.0,c=0.5,delivery": {
+  "resolution": 0.29333333333333333,
+  "deliveries_per_request": 192.21466666666666,
+  "deliveries_per_resolution": 669.1443469236729,
+  "median_hops": 5.6,
+  "mean_load": 53.15844444444444
+ },
+ "kappa=20.0,c=0.5,effective": {
+  "resolution": 0.30466666666666664,
+  "deliveries_per_request": 3.464666666666667,
+  "deliveries_per_resolution": 11.42267264186043,
+  "median_hops": 4.0,
+  "mean_load": 0.9502222222222223
+ },
+ "kappa=inf,c=0.1,none": {
+  "resolution": 0.12933333333333333,
+  "deliveries_per_request": 2.254666666666666,
+  "deliveries_per_resolution": 17.917548343129738,
+  "median_hops": 3.8,
+  "mean_load": 0.7515555555555554
+ },
+ "kappa=inf,c=0.1,delivery": {
+  "resolution": 1.0,
+  "deliveries_per_request": 525.2606666666667,
+  "deliveries_per_resolution": 525.2606666666667,
+  "median_hops": 4.0,
+  "mean_load": 94.13733333333332
+ },
+ "kappa=inf,c=0.1,effective": {
+  "resolution": 0.9026666666666667,
+  "deliveries_per_request": 51.092,
+  "deliveries_per_resolution": 56.600150051950074,
+  "median_hops": 4.2,
+  "mean_load": 8.480222222222222
+ },
+ "kappa=inf,c=0.3,none": {
+  "resolution": 0.12933333333333333,
+  "deliveries_per_request": 2.254666666666666,
+  "deliveries_per_resolution": 17.917548343129738,
+  "median_hops": 3.8,
+  "mean_load": 0.7515555555555554
+ },
+ "kappa=inf,c=0.3,delivery": {
+  "resolution": 1.0,
+  "deliveries_per_request": 525.2606666666667,
+  "deliveries_per_resolution": 525.2606666666667,
+  "median_hops": 4.0,
+  "mean_load": 94.13733333333332
+ },
+ "kappa=inf,c=0.3,effective": {
+  "resolution": 0.5206666666666666,
+  "deliveries_per_request": 7.279333333333332,
+  "deliveries_per_resolution": 13.989169304879965,
+  "median_hops": 4.0,
+  "mean_load": 1.549111111111111
+ },
+ "kappa=inf,c=0.5,none": {
+  "resolution": 0.12933333333333333,
+  "deliveries_per_request": 2.254666666666666,
+  "deliveries_per_resolution": 17.917548343129738,
+  "median_hops": 3.8,
+  "mean_load": 0.7515555555555554
+ },
+ "kappa=inf,c=0.5,delivery": {
+  "resolution": 1.0,
+  "deliveries_per_request": 525.2606666666667,
+  "deliveries_per_resolution": 525.2606666666667,
+  "median_hops": 4.0,
+  "mean_load": 94.13733333333332
+ },
+ "kappa=inf,c=0.5,effective": {
+  "resolution": 0.36866666666666664,
+  "deliveries_per_request": 3.8226666666666667,
+  "deliveries_per_resolution": 10.361726282404565,
+  "median_hops": 4.0,
+  "mean_load": 1.0182222222222221
+ }
+}
