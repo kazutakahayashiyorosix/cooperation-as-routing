@@ -18,7 +18,8 @@ import networkx as nx
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 RULES = ["none", "delivery", "effective"]
-P = dict(c=0.3, L=1.5, sigma=0.5, kappa=5.0, ttl=10, requests=300, cap_frac=0.5)
+P = dict(c=0.3, L=1.5, sigma=0.5, kappa=5.0, ttl=10, requests=300, cap_frac=0.5,
+         e0=1.0, delta=None)  # e0: base engagement; delta: dilution when one sender names k recipients at once (None = off)
 
 
 def graphs(seed):
@@ -35,6 +36,7 @@ def run_epoch(G, rule, m, rng, p=P):
     load = np.zeros(n)
     stats = collections.Counter()
     hops_resolved = []
+    deliv_by_hop = collections.Counter(); engaged_by_hop = collections.Counter()
     for _ in range(p["requests"]):
         t = int(rng.integers(n))
         capable = {t} | {v for v in nbrs[t] if rng.random() < p["cap_frac"]}
@@ -43,19 +45,23 @@ def run_epoch(G, rule, m, rng, p=P):
         while origin in capable:
             origin = int(rng.integers(n))
         seen = {origin}
-        frontier = [(origin, 0)]
+        frontier = [(origin, 0, 1)]
         resolved = False
         # the origin posts and routes like an intermediary that is always engaged
         first = True
         while frontier and not resolved:
             nxt = []
-            for u, h in frontier:
+            for u, h, k in frontier:
                 if not first:
                     load[u] += 1
-                    engage = 1.0 / (1.0 + load[u] / p["kappa"])
+                    deliv_by_hop[h] += 1
+                    engage = p.get("e0", 1.0) / (1.0 + load[u] / p["kappa"])
+                    if p.get("delta"):
+                        engage /= (1.0 + (k - 1) / p["delta"])
                     if rng.random() >= engage:
                         stats["drop_unengaged"] += 1
                         continue
+                    engaged_by_hop[h] += 1
                     if u in capable:
                         resolved = True
                         hops_resolved.append(h)
@@ -81,7 +87,7 @@ def run_epoch(G, rule, m, rng, p=P):
                     continue
                 for v in send:
                     seen.add(v)
-                    nxt.append((v, h + 1))
+                    nxt.append((v, h + 1, len(send)))
                 stats["deliveries"] += len(send)
             first = False
             frontier = nxt
@@ -93,6 +99,8 @@ def run_epoch(G, rule, m, rng, p=P):
         "deliveries_per_resolution": stats["deliveries"] / max(stats["resolved"], 1),
         "median_hops": float(np.median(hops_resolved)) if hops_resolved else float("nan"),
         "mean_load": float(load.mean()),
+        "drop_share": 1 - sum(engaged_by_hop.values()) / max(sum(deliv_by_hop.values()), 1),
+        "hop2_per_hop1": deliv_by_hop[2] / max(deliv_by_hop[1], 1),
     }
 
 

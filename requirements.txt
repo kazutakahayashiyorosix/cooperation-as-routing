@@ -1,3 +1,6 @@
 networkx>=3.0
 numpy
+scipy
 matplotlib
+pandas
+pyarrow
