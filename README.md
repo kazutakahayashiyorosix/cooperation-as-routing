@@ -1,5 +1,7 @@
 # Cooperation as Routing — simulation and GitHub check
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23753048.svg)](https://doi.org/10.5281/zenodo.23753048)
+
 Code for K. Hayashi, *Cooperation as Routing: A Network-Layer Formalization of How Help Propagates Through Social Networks* (manuscript under review).
 
 The simulation is agent-based. It compares three credit rules for intermediaries who forward help requests:
