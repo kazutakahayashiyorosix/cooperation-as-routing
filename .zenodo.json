@@ -1,0 +1,8 @@
+{
+  "title": "Cooperation as Routing: simulation, calibration and GitHub handoff analysis",
+  "description": "Code and results for K. Hayashi, 'When Does Crediting Forwarders Help? An Agent-Based Model of Help Routing Calibrated to Handoffs in GitHub Issues'. Agent-based comparison of no credit, delivery credit and effective-forward credit on lattice, small-world and scale-free networks; calibration of engagement to @-mention handoffs in GitHub issues (GH Archive, March 2024); engagement sweep with branching ratio; sensitivity and scaling.",
+  "upload_type": "software",
+  "creators": [{"name": "Hayashi, Kazutaka", "affiliation": "YOROSIX"}],
+  "license": "MIT",
+  "keywords": ["agent-based simulation", "cooperation", "routing", "incentives", "GitHub", "calibration"]
+}
