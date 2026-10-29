@@ -6,7 +6,7 @@ import json, sys, numpy as np
 from multiprocessing import Pool
 from routing_sim import run_epoch, P, RULES, graphs
 C = json.load(open("results/calibrated.json"))["fit"]
-E0 = [0.25, 0.4, 0.55, 0.7, 0.85, 1.0]; KAPPA = [5.0, 1e9]
+E0 = [0.25, 0.325, 0.4, 0.475, 0.55, 0.625, 0.7, 0.85, 1.0]; KAPPA = [5.0, 1e9]
 def job(args):
     s, e0, kap = args
     p = dict(P); p.update(e0=e0, delta=C["delta"], kappa=kap)
@@ -14,7 +14,7 @@ def job(args):
     for gname, G in graphs(s).items():
         for rule in RULES:
             r = run_epoch(G, rule, C["m_github"], np.random.default_rng(70000 + 100 * s + RULES.index(rule)), p)
-            out.append((gname, rule, e0, kap, r["resolution"], r["deliveries_per_resolution"]))
+            out.append((gname, rule, e0, kap, r["resolution"], r["deliveries_per_resolution"], r["hop2_per_hop1"], r["R_branch"]))
     return out
 if __name__ == "__main__":
     tasks = [(s, e, k) for s in range(20) for e in E0 for k in KAPPA]
@@ -28,7 +28,9 @@ if __name__ == "__main__":
             for k in KAPPA:
                 kk = "inf" if k > 1e8 else "5"
                 res.setdefault(g, {}).setdefault(rule, {})[kk] = {str(e): {"resolution": ci([r[4] for r in rows if r[:4] == (g, rule, e, k)]),
-                    "deliveries_per_resolution": ci([r[5] for r in rows if r[:4] == (g, rule, e, k)])} for e in E0}
+                    "deliveries_per_resolution": ci([r[5] for r in rows if r[:4] == (g, rule, e, k)]),
+                    "hop2_per_hop1": ci([r[6] for r in rows if r[:4] == (g, rule, e, k)]),
+                    "R_branch": ci([r[7] for r in rows if r[:4] == (g, rule, e, k)])} for e in E0}
     json.dump(res, open("results/engagement_sweep.json", "w"), indent=1)
     for g in res:
         for rule in RULES:

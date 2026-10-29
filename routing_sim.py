@@ -101,6 +101,7 @@ def run_epoch(G, rule, m, rng, p=P):
         "mean_load": float(load.mean()),
         "drop_share": 1 - sum(engaged_by_hop.values()) / max(sum(deliv_by_hop.values()), 1),
         "hop2_per_hop1": deliv_by_hop[2] / max(deliv_by_hop[1], 1),
+        "R_branch": sum(v for h, v in deliv_by_hop.items() if h >= 2) / max(sum(v for h, v in deliv_by_hop.items() if 1 <= h < p["ttl"]), 1),
     }
 
 

@@ -25,8 +25,8 @@ pip install -r requirements.txt   # networkx numpy scipy matplotlib (pandas pyar
 | Stylised experiment (Fig. 1) | `python3 routing_sim.py` | `results/sim_results.json` | ~2 min |
 | Sensitivity to c and κ (Table 1) | `python3 sens.py` | `results/sensitivity.json` | ~1 min |
 | Fit e0 and δ to GitHub response-by-k, then rerun with CIs, sensitivity and scaling | `python3 calibrate.py` | `results/calibrated.json` | ~10 min |
-| Sweep base engagement from the GitHub value to 1 | `python3 engagement_sweep.py` | `results/engagement_sweep.json` | ~30 min |
-| Figures | `python3 make_fig.py; python3 make_fig_sweep.py` | figures | seconds |
+| Sweep base engagement (9 values, 0.25 to 1) with branching ratio | `python3 engagement_sweep.py` | `results/engagement_sweep.json` | ~45 min |
+| Figures | `python3 make_fig.py; python3 make_fig_sweep.py; python3 make_fig_branch.py` | figures | seconds |
 
 ## Model parameters
 
